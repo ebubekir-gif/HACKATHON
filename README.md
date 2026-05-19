@@ -21,5 +21,5 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 **1. Repoyu Klonlayın**
 ```bash
-git clone [https://github.com/KULLANICI_ADIN/proje-adiniz.git](https://github.com/KULLANICI_ADIN/proje-adiniz.git)
-cd proje-adiniz
+git clone [https://github.com/ebubekir-gif/HACKATHON.git](https://github.com/ebubekir-gif/HACKATHON.git)
+cd [HACKATHON.git]
