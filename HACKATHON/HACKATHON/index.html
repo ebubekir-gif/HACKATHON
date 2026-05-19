@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Borsa Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="baslik">Borsa Analiz Paneli</h1>
+            <div class="search-area">
+                <select id="hisseKod" placeholder="Hisse ara veya seç..." autocomplete="off">
+                    <option value="">Yükleniyor...</option>
+                </select>
+                
+                <div class="period-selector">
+                    <label><input type="radio" name="period" value="1gun"> 1G</label>
+                    <label><input type="radio" name="period" value="1ay" checked> 1A</label>
+                    <label><input type="radio" name="period" value="6ay"> 6A</label>
+                    <label><input type="radio" name="period" value="12ay"> 12A</label>
+                </div>
+
+                <button onclick="veriyiGuncelle()">Veriyi Çek & Analiz Et</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="chart-area">
+                <canvas id="borsaGrafik"></canvas>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-panel">
+                    <h3>Güncel Fiyat</h3>
+                    <div id="fiyatText">--</div>
+                    <p id="tahminDurum">Hisse seçiniz.</p>
+                </div>
+
+                <div class="ai-panel">
+                    <h3>Teknik Model (Kısa Vadeli Tahmin)</h3>
+                    <div id="tahminYuzde">--</div>
+                    <p id="tahminYorum">Algoritma bekleniyor...</p>
+                </div>
+
+                <div class="ai-panel full-width">
+                    <h3>Piyasa Duyarlılığı (Uzunu Vadeli Yorum)</h3>
+                    <div id="geminiSkor">--</div>
+                    <p id="geminiYorum" style="text-align: justify; padding-top: 10px;">Haber analizi bekleniyor...</p>
+                </div>
+            </div>
+        </div>
+        <div class="yasal-uyari">
+            ⚠️ **YATIRIM TAVSİYESİ DEĞİLDİR:** Burada yer alan yapay zeka ve algoritma tahminleri strictly simülasyon amaçlı olup, finansal bir karar aracı olarak kullanılmamalıdır.
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* Genel Sayfa Ayarları */
+body { 
+    background-color: #0f172a; 
+    color: white; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    margin: 0;
+    padding: 20px;
+}
+
+/* Ana Konteyner - Dikey ve Dar Yapı */
+.container { 
+    width: 100%; 
+    max-width: 420px; /* Telefon genişliği */
+    background: #1e293b; 
+    padding: 20px; 
+    border-radius: 24px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header { 
+    text-align: center; 
+}
+
+.header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #f8fafc;
+}
+
+/* Arama ve Seçim Alanı */
+.search-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tom Select (Aramalı Liste) Koyu Tema Düzenlemesi */
+.ts-control { 
+    background-color: #0f172a !important; 
+    color: white !important; 
+    border: 1px solid #334155 !important; 
+    border-radius: 10px !important;
+    padding: 12px !important;
+}
+.ts-dropdown { 
+    background-color: #1e293b !important; 
+    color: white !important; 
+    border: 1px solid #334155 !important; 
+}
+.ts-dropdown .active { 
+    background-color: #38bdf8 !important; 
+    color: #0f172a !important; 
+}
+
+/* Periyot Seçici (1G, 1A, 6A, 12A) */
+.period-selector {
+    display: flex;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.period-selector label {
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Buton Tasarımı */
+button { 
+    width: 100%;
+    padding: 14px; 
+    background: #38bdf8; 
+    border: none; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    color: #0f172a; 
+    font-size: 1rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:active {
+    transform: scale(0.98);
+    background: #0ea5e9;
+}
+
+/* Grafik Alanı */
+.chart-area { 
+    height: 220px; 
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+/* Bilgi Panelleri (Fiyat ve Tahmin) */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-panel, .ai-panel {
+    background: #0f172a; 
+    padding: 18px; 
+    border-radius: 16px; 
+    text-align: center; 
+    border: 1px solid #334155;
+}
+
+.info-panel h3, .ai-panel h3 {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#fiyatText { 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    color: #38bdf8; 
+}
+
+#tahminYuzde { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    margin: 5px 0;
+}
+
+#tahminYorum, #tahminDurum {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 5px 0 0 0;
+}
+
+/* Küçük ekran ayarı */
+@media (max-width: 400px) {
+    .container {
+        padding: 15px;
+    }
+    #fiyatText { font-size: 1.8rem; }
+}
+
+/* Alt panelde tam genişlik kullanan özel sınıflar */
+.full-width {
+    grid-column: 1 / -1; /* Panel alanında boydan boya uzanır */
+    text-align: left; /* Okunabilirliği arttırmak için raporu sola yaslarız */
+}
+
+/* Info grid yapısını daha simetrik hale getirelim */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#geminiSkor {
+    font-size: 1.5rem; 
+    font-weight: 800; 
+    margin: 5px 0;
+}
+
+.yasal-uyari {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    border-top: 1px solid #334155;
+    padding-top: 15px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
